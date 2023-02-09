@@ -17,12 +17,10 @@
   <div id="root"></div>
   <script>
     if (navigator.serviceWorker) {
-      window.addEventListener("load", () => {
-        navigator.serviceWorker.register("./serviceworker.js")
-          .then(res => console.log(res))
-          .catch((err) => console.log(err))
-          .finally(() => { })
-      })
+      window.addEventListener("load", () => navigator.serviceWorker.register("./serviceworker.js")
+        .then(res => console.log(res.scope))
+        .catch((err) => console.log(err))
+      )
     }
   </script>
 </body>
